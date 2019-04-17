@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonStarAdd = new System.Windows.Forms.Button();
+            this.buttonStarClear = new System.Windows.Forms.Button();
+            this.buttonStarRm = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -50,12 +55,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBackGround = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -67,7 +80,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
             // 
             // splitContainer1.Panel2
             // 
@@ -93,9 +107,51 @@
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBackGround);
-            this.splitContainer1.Size = new System.Drawing.Size(1161, 700);
-            this.splitContainer1.SplitterDistance = 441;
+            this.splitContainer1.Size = new System.Drawing.Size(944, 700);
+            this.splitContainer1.SplitterDistance = 224;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonStarAdd);
+            this.groupBox1.Controls.Add(this.buttonStarClear);
+            this.groupBox1.Controls.Add(this.buttonStarRm);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 91);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Star";
+            // 
+            // buttonStarAdd
+            // 
+            this.buttonStarAdd.Location = new System.Drawing.Point(15, 23);
+            this.buttonStarAdd.Name = "buttonStarAdd";
+            this.buttonStarAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonStarAdd.TabIndex = 0;
+            this.buttonStarAdd.Text = "add star";
+            this.buttonStarAdd.UseVisualStyleBackColor = true;
+            this.buttonStarAdd.Click += new System.EventHandler(this.buttonStarAdd_click);
+            // 
+            // buttonStarClear
+            // 
+            this.buttonStarClear.Location = new System.Drawing.Point(119, 53);
+            this.buttonStarClear.Name = "buttonStarClear";
+            this.buttonStarClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonStarClear.TabIndex = 2;
+            this.buttonStarClear.Text = "clear";
+            this.buttonStarClear.UseVisualStyleBackColor = true;
+            this.buttonStarClear.Click += new System.EventHandler(this.buttonStarClear_click);
+            // 
+            // buttonStarRm
+            // 
+            this.buttonStarRm.Location = new System.Drawing.Point(15, 53);
+            this.buttonStarRm.Name = "buttonStarRm";
+            this.buttonStarRm.Size = new System.Drawing.Size(75, 23);
+            this.buttonStarRm.TabIndex = 1;
+            this.buttonStarRm.Text = "rm star";
+            this.buttonStarRm.UseVisualStyleBackColor = true;
+            this.buttonStarRm.Click += new System.EventHandler(this.buttonStarRm_click);
             // 
             // label21
             // 
@@ -146,7 +202,7 @@
             this.labeRDme.AutoSize = true;
             this.labeRDme.Font = new System.Drawing.Font("宋体", 14F);
             this.labeRDme.ForeColor = System.Drawing.Color.Green;
-            this.labeRDme.Location = new System.Drawing.Point(652, 666);
+            this.labeRDme.Location = new System.Drawing.Point(655, 662);
             this.labeRDme.Name = "labeRDme";
             this.labeRDme.Size = new System.Drawing.Size(49, 19);
             this.labeRDme.TabIndex = 36;
@@ -190,7 +246,7 @@
             this.labelLDme.AutoSize = true;
             this.labelLDme.Font = new System.Drawing.Font("宋体", 14F);
             this.labelLDme.ForeColor = System.Drawing.Color.Green;
-            this.labelLDme.Location = new System.Drawing.Point(49, 666);
+            this.labelLDme.Location = new System.Drawing.Point(49, 663);
             this.labelLDme.Name = "labelLDme";
             this.labelLDme.Size = new System.Drawing.Size(49, 19);
             this.labelLDme.TabIndex = 32;
@@ -321,23 +377,75 @@
             // 
             this.pictureBackGround.BackColor = System.Drawing.Color.Transparent;
             this.pictureBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBackGround.Image = global::WindowsFormsApp1.Properties.Resources.background;
             this.pictureBackGround.Location = new System.Drawing.Point(0, 0);
             this.pictureBackGround.Name = "pictureBackGround";
             this.pictureBackGround.Size = new System.Drawing.Size(716, 700);
             this.pictureBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBackGround.TabIndex = 43;
             this.pictureBackGround.TabStop = false;
+            this.pictureBackGround.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBackGround_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timerRefershPic_Tick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 110);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 111);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "plane";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(62, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 21);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "300";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(62, 48);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(132, 21);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "400";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(166, 310);
+            this.button1.Location = new System.Drawing.Point(119, 77);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.TabIndex = 2;
+            this.button1.Text = "apply";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "x:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "y:";
             // 
             // Form1
             // 
@@ -345,17 +453,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1161, 700);
+            this.ClientSize = new System.Drawing.Size(944, 700);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "ND - PLAN";
+            this.Shown += new System.EventHandler(this.initialWindow);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,8 +495,18 @@
         private System.Windows.Forms.Label labelGS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonStarAdd;
         private System.Windows.Forms.PictureBox pictureBackGround;
+        private System.Windows.Forms.Button buttonStarClear;
+        private System.Windows.Forms.Button buttonStarRm;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
