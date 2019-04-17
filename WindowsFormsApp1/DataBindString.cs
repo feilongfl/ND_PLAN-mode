@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public class DataBindString : INotifyPropertyChanged
     {
-        private string _theValue = string.Empty;
+        private string _DataValue = string.Empty;
 
-        public string TheValue
+        public string DataValue
         {
-            get { return _theValue; }
+            get { return _DataValue; }
             set
             {
-                if (string.IsNullOrEmpty(value) && value == _theValue)
+                if (string.IsNullOrEmpty(value) && value == _DataValue)
                     return;
 
-                _theValue = value;
-                NotifyPropertyChanged(() => TheValue);
+                _DataValue = value;
+                NotifyPropertyChanged(() => DataValue);
             }
         }
 
@@ -40,6 +36,11 @@ namespace WindowsFormsApp1
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(memberExpression.Member.Name));
         }
 
+        /// <summary>
+        /// bind editor to label
+        /// </summary>
+        /// <param name="textEditor"></param>
+        /// <param name="textLabel"></param>
         public void Bind(TextBox textEditor, Label textLabel)
         {
             textEditor.DataBindings.Add("Text", this, "TheValue", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -48,7 +49,7 @@ namespace WindowsFormsApp1
 
         public DataBindString(String str)
         {
-            TheValue = str;
+            DataValue = str;
         }
     }
 }
