@@ -34,6 +34,26 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
+        /// rotate picture
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="angel"></param>
+        /// <returns></returns>
+        private static Image RotatePicture(Image image, int angel)
+        {
+            Image imageResult = new Bitmap(image.Width, image.Height);
+            Graphics graphics = Graphics.FromImage(imageResult);
+            graphics.TranslateTransform((float)image.Width / 2, (float)image.Height / 2);
+            graphics.RotateTransform(angel);
+            graphics.TranslateTransform(-(float)image.Width / 2, -(float)image.Height / 2);
+
+            graphics.DrawImage(image, new Point(0, 0));
+            graphics.Dispose();
+
+            return imageResult;
+        }
+
+        /// <summary>
         /// draw image with point and width/height limit
         /// </summary>
         /// <param name="e"></param>
@@ -41,9 +61,15 @@ namespace WindowsFormsApp1
         /// <param name="point"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        private void DrawImage(PaintEventArgs e, Image image, Point point, int width, int height)
+        private void DrawImage(PaintEventArgs e,
+            Image image, Point point, int width, int height, int angel = 0)
         {
-            e.Graphics.DrawImage(image, point.X, point.Y, width, height);
+            if (angel == 0)
+                e.Graphics.DrawImage(image, point.X, point.Y, width, height);
+            else
+            {
+                e.Graphics.DrawImage(RotatePicture(image, angel), point.X, point.Y, width, height);//todo
+            }
         }
 
         /// <summary>
@@ -71,15 +97,16 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void pictureBackGround_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.DrawImage(Properties.Resources.star_pink, 300, 300, 32, 32);
+            // draw star
             for (int i = 0; i < points.Count; i++)
-            {
                 DrawStar(e, points[i], i + 1 == points.Count);
-            }
+
+            // draw lines
             if (points.Count > 1)
-            {
                 e.Graphics.DrawLines(Pens.AntiqueWhite, points.ToArray());
-            }
+
+            // draw plane
+            DrawImage(e, Properties.Resources.plane, plane.Local, widthHeight, widthHeight, plane.Angel);
         }
 
         /// <summary>
@@ -124,6 +151,25 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void timerRefershPic_Tick(object sender, EventArgs e)
         {
+            this.pictureBackGround.Refresh();
+        }
+
+        /// <summary>
+        /// plane point
+        /// </summary>
+        private Plane plane = new Plane(200, 200, 0);
+        /// <summary>
+        /// change plane location
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonPlaneApply_Click(object sender, EventArgs e)
+        {
+            plane.Local = new Point(
+                int.Parse(this.textBoxPlane_X.Text),
+                int.Parse(this.textBoxPlane_Y.Text)
+                );
+            plane.Angel = int.Parse(this.textBoxPlane_A.Text);
             this.pictureBackGround.Refresh();
         }
     }

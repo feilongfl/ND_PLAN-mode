@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonPlaneApply = new System.Windows.Forms.Button();
+            this.textBoxPlane_Y = new System.Windows.Forms.TextBox();
+            this.textBoxPlane_X = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonStarAdd = new System.Windows.Forms.Button();
             this.buttonStarClear = new System.Windows.Forms.Button();
@@ -56,19 +62,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBackGround = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxPlane_A = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -110,6 +112,68 @@
             this.splitContainer1.Size = new System.Drawing.Size(944, 700);
             this.splitContainer1.SplitterDistance = 224;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.buttonPlaneApply);
+            this.groupBox2.Controls.Add(this.textBoxPlane_A);
+            this.groupBox2.Controls.Add(this.textBoxPlane_Y);
+            this.groupBox2.Controls.Add(this.textBoxPlane_X);
+            this.groupBox2.Location = new System.Drawing.Point(12, 110);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 142);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "plane";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "y:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "x:";
+            // 
+            // buttonPlaneApply
+            // 
+            this.buttonPlaneApply.Location = new System.Drawing.Point(119, 107);
+            this.buttonPlaneApply.Name = "buttonPlaneApply";
+            this.buttonPlaneApply.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlaneApply.TabIndex = 2;
+            this.buttonPlaneApply.Text = "apply";
+            this.buttonPlaneApply.UseVisualStyleBackColor = true;
+            this.buttonPlaneApply.Click += new System.EventHandler(this.buttonPlaneApply_Click);
+            // 
+            // textBoxPlane_Y
+            // 
+            this.textBoxPlane_Y.Location = new System.Drawing.Point(62, 48);
+            this.textBoxPlane_Y.Name = "textBoxPlane_Y";
+            this.textBoxPlane_Y.Size = new System.Drawing.Size(132, 21);
+            this.textBoxPlane_Y.TabIndex = 1;
+            this.textBoxPlane_Y.Text = "400";
+            this.textBoxPlane_Y.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxPlane_X
+            // 
+            this.textBoxPlane_X.Location = new System.Drawing.Point(62, 21);
+            this.textBoxPlane_X.Name = "textBoxPlane_X";
+            this.textBoxPlane_X.Size = new System.Drawing.Size(132, 21);
+            this.textBoxPlane_X.TabIndex = 0;
+            this.textBoxPlane_X.Text = "300";
+            this.textBoxPlane_X.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox1
             // 
@@ -390,62 +454,23 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timerRefershPic_Tick);
             // 
-            // groupBox2
+            // textBoxPlane_A
             // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 110);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 111);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "plane";
+            this.textBoxPlane_A.Location = new System.Drawing.Point(62, 75);
+            this.textBoxPlane_A.Name = "textBoxPlane_A";
+            this.textBoxPlane_A.Size = new System.Drawing.Size(132, 21);
+            this.textBoxPlane_A.TabIndex = 1;
+            this.textBoxPlane_A.Text = "30";
+            this.textBoxPlane_A.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 21);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "300";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(62, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 21);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "400";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(119, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "apply";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "x:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "y:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 12);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "a:";
             // 
             // Form1
             // 
@@ -464,10 +489,10 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -504,9 +529,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonPlaneApply;
+        private System.Windows.Forms.TextBox textBoxPlane_Y;
+        private System.Windows.Forms.TextBox textBoxPlane_X;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxPlane_A;
     }
 }
 
