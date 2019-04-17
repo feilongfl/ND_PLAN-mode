@@ -17,10 +17,17 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        //RTE
+        /// <summary>
+        /// RTE
+        /// </summary>
         private List<Point> points = new List<Point>();
+
         private Random rnd = new Random();// for test
 
+        // data bind
+        DataBindString DataGS = new DataBindString("267");
+        DataBindString DataTAS = new DataBindString("263");
+        //以下省略自己加上
 
         /// <summary>
         /// initial picture background
@@ -29,8 +36,24 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void initialWindow(object sender, EventArgs e)
         {
+            // back image
             this.pictureBackGround.BackgroundImage = Properties.Resources.background;
             this.pictureBackGround.BackgroundImageLayout = ImageLayout.Stretch;
+
+            // plane
+            this.plane.Angel = int.Parse(this.textBoxPlane_A.Text);
+            this.plane.Local = new Point(
+                int.Parse(this.textBoxPlane_X.Text),
+                int.Parse(this.textBoxPlane_Y.Text)
+                );
+
+            // data bind
+            DataGS.Bind(textBoxGS, labelGS);
+            DataTAS.Bind(textBoxTAS, labelTAS);
+            //以下省略自己加上
+
+            // update picture box
+            this.pictureBackGround.Refresh();
         }
 
         /// <summary>
@@ -157,7 +180,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// plane point
         /// </summary>
-        private Plane plane = new Plane(200, 200, 0);
+        private Plane plane = new Plane(0, 0, 0);
         /// <summary>
         /// change plane location
         /// </summary>
@@ -172,5 +195,6 @@ namespace WindowsFormsApp1
             plane.Angel = int.Parse(this.textBoxPlane_A.Text);
             this.pictureBackGround.Refresh();
         }
+        
     }
 }
