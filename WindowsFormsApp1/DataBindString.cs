@@ -43,8 +43,8 @@ namespace WindowsFormsApp1
         /// <param name="textLabel"></param>
         public void Bind(TextBox textEditor, Label textLabel)
         {
-            textEditor.DataBindings.Add("Text", this, "TheValue", false, DataSourceUpdateMode.OnPropertyChanged);
-            textLabel.DataBindings.Add("Text", this, "TheValue", false, DataSourceUpdateMode.Never);
+            textEditor.DataBindings.Add("Text", this, "DataValue", false, DataSourceUpdateMode.OnPropertyChanged);
+            textLabel.DataBindings.Add("Text", this, "DataValue", false, DataSourceUpdateMode.Never);
         }
 
         public DataBindString(String str)

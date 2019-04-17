@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
         /// <param name="point"></param>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        private void DrawImage(PaintEventArgs e,
+        private static void DrawImage(PaintEventArgs e,
             Image image, Point point, int width, int height, int angel = 0)
         {
             if (angel == 0)
@@ -174,7 +174,9 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void timerRefershPic_Tick(object sender, EventArgs e)
         {
-            this.pictureBackGround.Refresh();
+            //this.pictureBackGround.Refresh();
+
+            this.toolStripStatusLabel1.Text = DateTime.Now.ToString();
         }
 
         /// <summary>
@@ -195,6 +197,5 @@ namespace WindowsFormsApp1
             plane.Angel = int.Parse(this.textBoxPlane_A.Text);
             this.pictureBackGround.Refresh();
         }
-        
     }
 }
