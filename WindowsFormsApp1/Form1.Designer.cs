@@ -92,6 +92,7 @@
             this.textBoxPlane_A = new System.Windows.Forms.TextBox();
             this.textBoxPlane_Y = new System.Windows.Forms.TextBox();
             this.textBoxPlane_X = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).BeginInit();
@@ -464,7 +465,7 @@
             this.groupBox3.Controls.Add(this.textBoxGS);
             this.groupBox3.Location = new System.Drawing.Point(6, 258);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(206, 439);
+            this.groupBox3.Size = new System.Drawing.Size(206, 344);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "text";
@@ -719,6 +720,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
@@ -814,6 +816,16 @@
             this.textBoxPlane_X.Text = "300";
             this.textBoxPlane_X.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxPlane_X.TextChanged += new System.EventHandler(this.textBoxPlane_X_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(59, 641);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "mcdu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -911,6 +923,7 @@
         private System.Windows.Forms.TextBox textBoxPlane_A;
         private System.Windows.Forms.TextBox textBoxPlane_Y;
         private System.Windows.Forms.TextBox textBoxPlane_X;
+        private System.Windows.Forms.Button button1;
     }
 }
 

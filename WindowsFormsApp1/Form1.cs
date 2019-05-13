@@ -232,5 +232,12 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        Mcdu myMcdu = new Mcdu();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            myMcdu.ShowDialog();
+        }
     }
 }
