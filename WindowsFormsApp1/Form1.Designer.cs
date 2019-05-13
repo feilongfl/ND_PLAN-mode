@@ -92,7 +92,6 @@
             this.textBoxPlane_A = new System.Windows.Forms.TextBox();
             this.textBoxPlane_Y = new System.Windows.Forms.TextBox();
             this.textBoxPlane_X = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBackGround)).BeginInit();
@@ -139,14 +138,15 @@
             this.groupBox1.Controls.Add(this.buttonStarRm);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 91);
+            this.groupBox1.Size = new System.Drawing.Size(200, 84);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Star";
+            this.groupBox1.Visible = false;
             // 
             // buttonStarAdd
             // 
-            this.buttonStarAdd.Location = new System.Drawing.Point(15, 23);
+            this.buttonStarAdd.Location = new System.Drawing.Point(14, 16);
             this.buttonStarAdd.Name = "buttonStarAdd";
             this.buttonStarAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonStarAdd.TabIndex = 0;
@@ -158,7 +158,7 @@
             // 
             this.buttonStarClear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStarClear.Location = new System.Drawing.Point(119, 53);
+            this.buttonStarClear.Location = new System.Drawing.Point(118, 46);
             this.buttonStarClear.Name = "buttonStarClear";
             this.buttonStarClear.Size = new System.Drawing.Size(75, 23);
             this.buttonStarClear.TabIndex = 2;
@@ -168,7 +168,7 @@
             // 
             // buttonStarRm
             // 
-            this.buttonStarRm.Location = new System.Drawing.Point(15, 53);
+            this.buttonStarRm.Location = new System.Drawing.Point(14, 46);
             this.buttonStarRm.Name = "buttonStarRm";
             this.buttonStarRm.Size = new System.Drawing.Size(75, 23);
             this.buttonStarRm.TabIndex = 1;
@@ -463,7 +463,7 @@
             this.groupBox3.Controls.Add(this.textBoxNEXTWPT);
             this.groupBox3.Controls.Add(this.textBoxTAS);
             this.groupBox3.Controls.Add(this.textBoxGS);
-            this.groupBox3.Location = new System.Drawing.Point(6, 258);
+            this.groupBox3.Location = new System.Drawing.Point(12, 331);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(206, 344);
             this.groupBox3.TabIndex = 5;
@@ -720,7 +720,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
@@ -765,7 +764,7 @@
             this.groupBox2.Controls.Add(this.textBoxPlane_A);
             this.groupBox2.Controls.Add(this.textBoxPlane_Y);
             this.groupBox2.Controls.Add(this.textBoxPlane_X);
-            this.groupBox2.Location = new System.Drawing.Point(12, 110);
+            this.groupBox2.Location = new System.Drawing.Point(12, 183);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 142);
             this.groupBox2.TabIndex = 4;
@@ -816,16 +815,6 @@
             this.textBoxPlane_X.Text = "300";
             this.textBoxPlane_X.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxPlane_X.TextChanged += new System.EventHandler(this.textBoxPlane_X_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(59, 641);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "mcdu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -923,7 +912,6 @@
         private System.Windows.Forms.TextBox textBoxPlane_A;
         private System.Windows.Forms.TextBox textBoxPlane_Y;
         private System.Windows.Forms.TextBox textBoxPlane_X;
-        private System.Windows.Forms.Button button1;
     }
 }
 

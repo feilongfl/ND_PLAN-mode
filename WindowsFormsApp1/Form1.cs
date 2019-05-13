@@ -39,6 +39,16 @@ namespace WindowsFormsApp1
         DataBindString DataRKN = new DataBindString("RKN");
 
 
+        static private Point longlattrans(double lon, double lat)
+        {
+            int x, y;
+
+            x = (int)lon;
+            y = (int)lat;
+
+            return new Point(x, y);
+        }
+
 
         /// <summary>
         /// initial picture background
@@ -72,7 +82,10 @@ namespace WindowsFormsApp1
             DataDMEL.Bind(textBoxDMEL, labelDMEL);
             DataRKN.Bind(textBoxRKN, labelRKN);
 
-
+            // add rte
+            this.points.Add(longlattrans(300, 200));
+            this.points.Add(longlattrans(200, 200));
+            this.points.Add(longlattrans(500, 200));
 
             //update picture box
             this.pictureBackGround.Refresh();
@@ -182,7 +195,7 @@ namespace WindowsFormsApp1
             }
 
             this.points.Add(point);
-          this.pictureBackGround.Refresh();
+            this.pictureBackGround.Refresh();
         }
 
         /// <summary>
@@ -233,11 +246,11 @@ namespace WindowsFormsApp1
 
         }
 
-        Mcdu myMcdu = new Mcdu();
+        //Mcdu myMcdu = new Mcdu();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            myMcdu.ShowDialog();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    myMcdu.ShowDialog();
+        //}
     }
 }
