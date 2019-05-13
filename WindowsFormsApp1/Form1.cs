@@ -27,7 +27,18 @@ namespace WindowsFormsApp1
         // data bind
         DataBindString DataGS = new DataBindString("267");
         DataBindString DataTAS = new DataBindString("263");
-        //以下省略自己加上
+        DataBindString DataWS = new DataBindString("175/5");
+        DataBindString DataNEXTWPT = new DataBindString("DEEF/249°");
+        DataBindString DataTIME = new DataBindString("10:20");
+        DataBindString DataDIST = new DataBindString("49NM");
+        DataBindString DataVORL = new DataBindString("VOR L");
+        DataBindString DataVORR = new DataBindString("VOR R");
+        DataBindString DataDMEL = new DataBindString("DME L");
+        DataBindString DataDMER = new DataBindString("DME R");
+        DataBindString DataSSB = new DataBindString("SSB");
+        DataBindString DataRKN = new DataBindString("RKN");
+
+
 
         /// <summary>
         /// initial picture background
@@ -50,9 +61,20 @@ namespace WindowsFormsApp1
             // data bind
             DataGS.Bind(textBoxGS, labelGS);
             DataTAS.Bind(textBoxTAS, labelTAS);
-            //以下省略自己加上
+            DataWS.Bind(textBoxWS, labelWS);
+            DataNEXTWPT.Bind(textBoxNEXTWPT, labelNEXTWPT);
+            DataDIST.Bind(textBoxDIST, labelDIST);
+            DataTIME.Bind(textBoxTIME, labelTIME);
+            DataVORL.Bind(textBoxVORL, labelVORL);
+            DataVORR.Bind(textBoxVORR, labelVORR);
+            DataSSB.Bind(textBoxSSB, labelSSB);
+            DataDMER.Bind(textBoxDMER, labelDMER);
+            DataDMEL.Bind(textBoxDMEL, labelDMEL);
+            DataRKN.Bind(textBoxRKN, labelRKN);
 
-            // update picture box
+
+
+            //update picture box
             this.pictureBackGround.Refresh();
         }
 
@@ -129,7 +151,7 @@ namespace WindowsFormsApp1
                 e.Graphics.DrawLines(Pens.AntiqueWhite, points.ToArray());
 
             // draw plane
-            DrawImage(e, Properties.Resources.plane, plane.Local, widthHeight, widthHeight, plane.Angel);
+            DrawImage(e, Properties.Resources.nplane, plane.Local, widthHeight, widthHeight, plane.Angel);
         }
 
         /// <summary>
@@ -152,8 +174,15 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void buttonStarAdd_click(object sender, EventArgs e)
         {
-            this.points.Add(new Point(rnd.Next(100, 600), rnd.Next(100, 600)));
-            this.pictureBackGround.Refresh();
+            Point point = new Point(rnd.Next(100, 600), rnd.Next(100, 600));
+
+            if (points.Count == 0)
+            {
+                this.plane.Local = point;
+            }
+
+            this.points.Add(point);
+          this.pictureBackGround.Refresh();
         }
 
         /// <summary>
@@ -174,7 +203,8 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void timerRefershPic_Tick(object sender, EventArgs e)
         {
-            //this.pictureBackGround.Refresh();
+            this.plane.Local = new Point(rnd.Next(100, 600), rnd.Next(100, 600));
+            this.pictureBackGround.Refresh();
 
             this.toolStripStatusLabel1.Text = DateTime.Now.ToString();
         }
@@ -190,12 +220,17 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void buttonPlaneApply_Click(object sender, EventArgs e)
         {
-            plane.Local = new Point(
-                int.Parse(this.textBoxPlane_X.Text),
-                int.Parse(this.textBoxPlane_Y.Text)
-                );
-            plane.Angel = int.Parse(this.textBoxPlane_A.Text);
-            this.pictureBackGround.Refresh();
+            //plane.Local = new Point(
+            //    int.Parse(this.textBoxPlane_X.Text),
+            //    int.Parse(this.textBoxPlane_Y.Text)
+            //    );
+            //plane.Angel = int.Parse(this.textBoxPlane_A.Text);
+            //this.pictureBackGround.Refresh();
+        }
+
+        private void textBoxPlane_X_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
