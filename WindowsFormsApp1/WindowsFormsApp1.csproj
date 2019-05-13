@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\Virtual-CDU-A320.jpg" />
     <None Include="Resources\CDU_button-group-overlay.png" />
     <None Include="Resources\nplane.png" />
     <None Include="Resources\Image1.png" />
