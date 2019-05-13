@@ -203,10 +203,10 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void timerRefershPic_Tick(object sender, EventArgs e)
         {
-            this.plane.Local = new Point(rnd.Next(100, 600), rnd.Next(100, 600));
-            this.pictureBackGround.Refresh();
+            //this.plane.Local = new Point(rnd.Next(100, 600), rnd.Next(100, 600));
+            //this.pictureBackGround.Refresh();
 
-            this.toolStripStatusLabel1.Text = DateTime.Now.ToString();
+            //this.toolStripStatusLabel1.Text = DateTime.Now.ToString();
         }
 
         /// <summary>
@@ -220,12 +220,12 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void buttonPlaneApply_Click(object sender, EventArgs e)
         {
-            //plane.Local = new Point(
-            //    int.Parse(this.textBoxPlane_X.Text),
-            //    int.Parse(this.textBoxPlane_Y.Text)
-            //    );
-            //plane.Angel = int.Parse(this.textBoxPlane_A.Text);
-            //this.pictureBackGround.Refresh();
+            plane.Local = new Point(
+                int.Parse(this.textBoxPlane_X.Text),
+                int.Parse(this.textBoxPlane_Y.Text)
+                );
+            plane.Angel = int.Parse(this.textBoxPlane_A.Text);
+            this.pictureBackGround.Refresh();
         }
 
         private void textBoxPlane_X_TextChanged(object sender, EventArgs e)
